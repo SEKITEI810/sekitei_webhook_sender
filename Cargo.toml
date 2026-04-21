@@ -1,0 +1,26 @@
+[package]
+name = "sekitei-cannon-2026-working"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+eframe = "0.27"
+egui = "0.27"
+rfd = "0.14"
+fastrand = "2.0"
+image = "0.24"
+
+[build-dependencies]
+winres = "0.1"
+image = "0.24"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
